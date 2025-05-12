@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
-import MakeText from "../libs/text" //import MakeText from "../../../../libs/text"
-
+import MakeText from "../libs/text"
 test.describe('TEST WEBSITE TO DO LIST', () => {
   const Todo1 = MakeText(5)
   const Todo2 = MakeText(5)
@@ -22,7 +21,7 @@ test.describe('TEST WEBSITE TO DO LIST', () => {
     await page.getByText(Todo1).click();
     await page.getByRole('link', { name: 'Completed' }).click();
     await expect(page.getByRole('link', { name: 'Completed' })).toBeVisible();
-    await expect(page.getByText('done'+Todo1)).toBeVisible();
+    await expect(page.getByText('done' + Todo1)).toBeVisible();
     await page.getByRole('button', { name: 'Delete' }).click();
     await expect(page.getByText(Todo1)).toHaveCount(0);
   });
@@ -41,8 +40,8 @@ test.describe('TEST WEBSITE TO DO LIST', () => {
     await page.getByText(Todo2).click();
     await page.getByRole('link', { name: 'Completed' }).click();
     await expect(page.getByRole('link', { name: 'Completed' })).toBeVisible();
-    await expect(page.getByText('done'+Todo1)).toBeVisible();
-    await expect(page.getByText('done'+Todo2)).toBeVisible();
+    await expect(page.getByText('done' + Todo1)).toBeVisible();
+    await expect(page.getByText('done' + Todo2)).toBeVisible();
     await page.locator('[id="\\31 "]').click();
     await page.getByRole('button', { name: 'Delete' }).click();
     await expect(page.getByText(Todo1)).toHaveCount(0);

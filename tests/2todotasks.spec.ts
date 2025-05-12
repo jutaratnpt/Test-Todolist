@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import MakeText from "../libs/text" //import MakeText from "../../../../libs/text"
+import MakeText from "../libs/text"
 
 test.describe('TEST WEBSITE TO DO LIST', () => {
   const Todo1 = MakeText(5)
